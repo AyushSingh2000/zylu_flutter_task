@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "761920059803",
+    "project_id": "zylu-employee",
+    "storage_bucket": "zylu-employee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:761920059803:android:f117b332eaf50c8f7b493e",
+        "android_client_info": {
+          "package_name": "com.example.zylu_flutter_task"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9iW9d-I0s7zesJXwu6yFF-QnIIPmlPYY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
