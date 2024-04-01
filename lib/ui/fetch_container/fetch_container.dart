@@ -143,12 +143,14 @@ class FetchContainer extends StatelessWidget {
   final String text1;
   final String text2;
   final String text3;
+  final String text4;
 
   const FetchContainer({
     Key? key,
     required this.text1,
     required this.text2,
     required this.text3,
+    required this.text4,
   }) : super(key: key);
 
   bool isMoreThanFiveYears(DateTime dateOfJoining) {
@@ -164,7 +166,6 @@ class FetchContainer extends StatelessWidget {
       differenceInYears--;
     }
 
-    // Condition to check if the difference is more than 5 years
     return differenceInYears > 5;
   }
 
@@ -172,7 +173,8 @@ class FetchContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     DateTime dateOfJoining = DateTime.parse(text3);
 
-    bool showActingText = isMoreThanFiveYears(dateOfJoining);
+    bool showActingText =
+        isMoreThanFiveYears(dateOfJoining) && text4 == "Active";
 
     return Padding(
       padding: const EdgeInsets.only(
@@ -254,14 +256,34 @@ class FetchContainer extends StatelessWidget {
                                     left: 10,
                                   ),
                                   alignment: Alignment.bottomLeft,
-                                  child: Text(
-                                    'DOJ: $text3'.toUpperCase(),
-                                    style: TextStyle(
-                                      color: Colors.black.withOpacity(0.7),
-                                      fontSize: 15,
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w800,
-                                    ),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        'DOJ: $text3'.toUpperCase(),
+                                        style: TextStyle(
+                                          color: Colors.black.withOpacity(0.7),
+                                          fontSize: 15,
+                                          fontFamily: 'Poppins',
+                                          fontWeight: FontWeight.w800,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        width: 40,
+                                      ),
+                                      Container(
+                                        alignment: Alignment.bottomLeft,
+                                        child: Text(
+                                          'Status: $text4'.toUpperCase(),
+                                          style: TextStyle(
+                                            color:
+                                                Colors.black.withOpacity(0.7),
+                                            fontSize: 15,
+                                            fontFamily: 'Poppins',
+                                            fontWeight: FontWeight.w800,
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ],

@@ -16,10 +16,10 @@ class ListItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           FetchContainer(
-            text1: employee['employee'],
-            text2: employee['department'],
-            text3: employee['date_of_joining'],
-          ),
+              text1: employee['employee'],
+              text2: employee['department'],
+              text3: employee['date_of_joining'],
+              text4: employee['active_status']),
         ],
       ),
     );

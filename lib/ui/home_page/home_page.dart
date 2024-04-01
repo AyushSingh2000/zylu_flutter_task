@@ -52,6 +52,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               Container(
+                padding: EdgeInsets.only(bottom: 80),
                 height: MediaQuery.of(context).size.height,
                 child: FirebaseAnimatedList(
                   query: dbRef,

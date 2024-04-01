@@ -16,6 +16,7 @@ class _AddEmployeeState extends State<AddEmployee> {
   final employeeController = TextEditingController();
   final departmentController = TextEditingController();
   final dateOfJoiningController = TextEditingController();
+  final isActive = TextEditingController();
   final databaseRef = FirebaseDatabase.instance.ref().child('Employee');
 
   @override
@@ -121,6 +122,37 @@ class _AddEmployeeState extends State<AddEmployee> {
               ),
             ),
             const SizedBox(
+              height: 20,
+            ),
+            TextField(
+              controller: isActive,
+              keyboardType: TextInputType.text,
+              cursorColor: Pallete.txt1color,
+              autofocus: true,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                labelText: 'Active or Inactive',
+                labelStyle: const TextStyle(
+                  color: Pallete.txt1color,
+                  fontSize: 17,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w500,
+                ),
+                hintText: 'Enter active or inactive',
+                hintStyle: const TextStyle(
+                  color: Pallete.txt3color,
+                  fontSize: 17,
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+            const SizedBox(
               height: 30,
             ),
             // RoundButton(
@@ -148,6 +180,7 @@ class _AddEmployeeState extends State<AddEmployee> {
                     'employee': employeeController.text,
                     'department': departmentController.text,
                     'date_of_joining': dateOfJoiningController.text,
+                    'active_status': isActive.text,
                     // 'salary': userSalaryController.text
                   };
 
